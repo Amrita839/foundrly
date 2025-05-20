@@ -1,49 +1,72 @@
+# Foundrly
 
-## Project info
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Built With](https://img.shields.io/badge/Built%20with-Vite%2C%20React%2C%20TypeScript%2C%20Tailwind-blue)
 
-**Use your preferred IDE**
+Foundrly is a modern web application scaffolded with Vite, built using React and TypeScript. It uses Tailwind CSS and shadcn-ui to deliver clean, responsive UI components and developer-friendly structure for scalable front-end applications.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Tech Stack
 
-Follow these steps:
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn-ui
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Getting Started
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Prerequisites
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+- Node.js (v18+ recommended)
+- npm
+
+(Optional) Use [nvm](https://github.com/nvm-sh/nvm) to manage Node versions.
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Amrita839/foundrly.git
+
+# Navigate into the project directory
+cd foundrly
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit [http://localhost:5173](http://localhost:5173) in your browser to view the app.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Development Options
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Local Development
 
-## What technologies are used for this project?
+You can use any preferred IDE (e.g., VS Code) to work with the codebase locally.
 
-This project is built with:
+### Edit via GitHub
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Navigate to the desired file
+2. Click the "Edit" (pencil) icon
+3. Commit your changes
 
+### GitHub Codespaces
+
+1. Go to the repository main page
+2. Click the "Code" button
+3. Open the "Codespaces" tab
+4. Create a new codespace to work in-browser
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
