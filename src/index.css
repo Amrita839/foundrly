@@ -1,0 +1,159 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme (default variables without :root.dark) */
+    --background: 48 30% 96%;    /* Light cream #FAF8F1 */
+    --foreground: 217 10% 20%;   /* Deep navy #292F36 */
+
+    --card: 48 30% 96%;
+    --card-foreground: 217 10% 20%;
+
+    --popover: 48 30% 96%;
+    --popover-foreground: 217 10% 20%;
+
+    --primary: 175 57% 55%;       /* Soft teal #4ECDC4 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 245 36% 74%;     /* Gentle lavender #A0A4D9 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 245 36% 90%;
+    --muted-foreground: 217 10% 40%;
+
+    --accent: 359 100% 70%;       /* Muted coral #FF6B6B */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 359 100% 70%;  /* Muted coral #FF6B6B */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 10% 80%;
+    --input: 217 10% 80%;
+    --ring: 175 57% 55%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%; /* Black background */
+    --foreground: 0 0% 98%;     /* White text */
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 175 57% 55%;    /* Teal primary */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 245 36% 74%;  /* Lavender secondary */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 245 36% 90%;
+    --muted-foreground: 217 20% 40%;
+
+    --accent: 245 36% 74%;     /* Lavender accent */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 70%;  /* Coral for destructive actions */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 175 57% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .swipe-card {
+    @apply relative rounded-xl shadow-lg overflow-hidden;
+    will-change: transform;
+    transform-origin: center;
+    touch-action: none;
+  }
+  
+  /* Feminine gradient button styles */
+  .button-like {
+    @apply flex items-center justify-center w-12 h-12 rounded-full bg-white text-teal text-xl shadow-md;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.5);
+  }
+  
+  .button-dislike {
+    @apply flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-coral text-xl shadow-md;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  }
+
+  /* Hover effects */
+  .hover-sparkle {
+    @apply relative overflow-hidden;
+  }
+  
+  .hover-sparkle:after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 pointer-events-none transition-opacity duration-500;
+  }
+  
+  .hover-sparkle:hover:after {
+    @apply opacity-10;
+    animation: sparkle-sweep 1.5s ease-in-out;
+  }
+}
+
+@keyframes sparkle-sweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+}
+
+/* Animation for swipe actions */
+@keyframes swipe-left {
+  0% { transform: translateX(0) rotate(0); }
+  100% { transform: translateX(-120%) rotate(-20deg); }
+}
+
+@keyframes swipe-right {
+  0% { transform: translateX(0) rotate(0); }
+  100% { transform: translateX(120%) rotate(20deg); }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-swipe-left {
+  animation: swipe-left 0.5s forwards;
+}
+
+.animate-swipe-right {
+  animation: swipe-right 0.5s forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
